@@ -1,7 +1,7 @@
 import requests, base64, urllib.request, os
 
-TOKEN = "SEU_TOKEN"
-REPO = "usuario/repositorio"
+TOKEN = "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"
+REPO = "davibranco888-dotcom/Msg"
 FILE = "msg.txt"
 
 def limpar():
@@ -36,11 +36,9 @@ while True:
 
     requests.put(api, json=data, headers={"Authorization": f"token {TOKEN}"})
 
-    # LIMPAR + MOSTRAR ATUALIZADO
+    # LIMPAR E MOSTRAR
     limpar()
 
-    url = f"https://raw.githubusercontent.com/{REPO}/main/{FILE}"
     chat = urllib.request.urlopen(url).read().decode()
-
     print("\n--- CHAT ATUALIZADO ---")
     print(chat)
